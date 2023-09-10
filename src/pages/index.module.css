@@ -188,3 +188,14 @@
 .chatinput button:hover {
   background-color: #3e8e41;
 }
+
+.explain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+  margin: 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}

@@ -90,31 +90,39 @@ const Home = () => {
   // };
 
   return (
-    <div className={styles.chatcontainer}>
-      <div className={styles.chatmessages}>
-        {messages.map((message, index) => (
-          <div className={`${styles.chatmessage} ${message.isSelf ? styles.self : ''}`} key={index}>
-            <strong>{message.author}: </strong>
-            <span>{message.message}</span>
-          </div>
-        ))}
+    <>
+      <div className={styles.explain}>
+        <a href="/explain">説明ページへ</a>
       </div>
-      <div className={styles.chatinput}>
-        <input
-          type="text"
-          value={authorName}
-          onChange={handleAuthorNameChange}
-          placeholder="Enter your name"
-        />
-        <input
-          type="text"
-          value={inputValue}
-          onChange={handleInputChange}
-          placeholder="Type your message here..."
-        />
-        <button onClick={handleSendMessage}>Send</button>
+      <div className={styles.chatcontainer}>
+        <div className={styles.chatmessages}>
+          {messages.map((message, index) => (
+            <div
+              className={`${styles.chatmessage} ${message.isSelf ? styles.self : ''}`}
+              key={index}
+            >
+              <strong>{message.author}: </strong>
+              <span>{message.message}</span>
+            </div>
+          ))}
+        </div>
+        <div className={styles.chatinput}>
+          <input
+            type="text"
+            value={authorName}
+            onChange={handleAuthorNameChange}
+            placeholder="Enter your name"
+          />
+          <input
+            type="text"
+            value={inputValue}
+            onChange={handleInputChange}
+            placeholder="Type your message here..."
+          />
+          <button onClick={handleSendMessage}>Send</button>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
